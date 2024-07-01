@@ -1,3 +1,3 @@
-module github.com/yalay/mobile-models
+module github.com/yalay/mm
 
 go 1.19
