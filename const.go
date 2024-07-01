@@ -13,6 +13,7 @@ const (
 	BrandHuaWei  = "HUAWEI"
 	BrandApple   = "Apple"
 	Brand360     = "360"
+	BrandNubia   = "nubia"
 	BrandUnknown = "unknown"
 )
 
@@ -43,6 +44,8 @@ var (
 	ModelRegexpApple = regexp.MustCompile(`^A(\d{4})$`)
 
 	ModelRegexp360 = regexp.MustCompile(`^(\d{4})([AM])(\d{2})$`)
+
+	ModelRegexpNubia = regexp.MustCompile(`^NX(\d{3})[A-Z-]{1,2}`)
 )
 
 var BrandRegexps = map[string][]*regexp.Regexp{
@@ -56,4 +59,5 @@ var BrandRegexps = map[string][]*regexp.Regexp{
 	BrandOnePlus: {ModelRegexpOnePlus},
 	BrandSamsung: {ModelRegexpSamsung},
 	Brand360:     {ModelRegexp360},
+	BrandNubia:   {ModelRegexpNubia},
 }
