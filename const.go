@@ -22,11 +22,11 @@ var (
 	ModelRegexpXiaoMi1 = regexp.MustCompile(`M(\d{4})(\w{3})[AECGHYIPLRTW]`)
 	ModelRegexpXiaoMi2 = regexp.MustCompile(`(\d{4})(\w{3,4})[CGYIPHLRT]`)
 	ModelRegexpXiaoMi3 = regexp.MustCompile(`(\d{4})(\w{5})[CAGOXYIPHLRT]`)
-	ModelRegexpXiaoMi4 = regexp.MustCompile(`(MI|Redmi|Xiaomi) \w+.*`)
+	ModelRegexpXiaoMi4 = regexp.MustCompile(`(MI|REDMI|XIAOMI) \w+.*`)
 	ModelRegexpXiaoMi5 = regexp.MustCompile(`[A-Z]{3}-(A0|H0)`) // 黑鲨
 
 	ModelRegexpViVo1 = regexp.MustCompile(`([VI])(\d{4})([AT])?`)
-	ModelRegexpViVo2 = regexp.MustCompile(`vivo.*`)
+	ModelRegexpViVo2 = regexp.MustCompile(`VIVO.*`)
 
 	ModelRegexpSamsung = regexp.MustCompile(`SM-([SGNFAMECJTXR])(\d{3})([0-9BEFGHUVAPTWNQMC]{1,2})`)
 

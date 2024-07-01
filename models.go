@@ -1,23 +1,27 @@
 package mm
 
-import "sync"
+import (
+	"strings"
+	"sync"
+)
 
 var cache sync.Map
 
 func Model2Brand(model string) string {
-	if cachedBrand, ok := cache.Load(model); ok {
+	upperModel := strings.ToUpper(model)
+	if cachedBrand, ok := cache.Load(upperModel); ok {
 		return cachedBrand.(string)
 	}
 
 	for brand, regs := range BrandRegexps {
 		for _, reg := range regs {
-			if reg.MatchString(model) {
-				cache.Store(model, brand)
+			if reg.MatchString(upperModel) {
+				cache.Store(upperModel, brand)
 				return brand
 			}
 		}
 	}
 
-	cache.Store(model, BrandUnknown)
+	cache.Store(upperModel, BrandUnknown)
 	return BrandUnknown
 }
