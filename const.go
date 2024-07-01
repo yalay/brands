@@ -45,7 +45,7 @@ var (
 
 	ModelRegexp360 = regexp.MustCompile(`^(\d{4})([AM])(\d{2})$`)
 
-	ModelRegexpNubia = regexp.MustCompile(`^NX(\d{3})[A-Z-]{1,2}`)
+	ModelRegexpNubia = regexp.MustCompile(`^NX(\d{3})[JH]`)
 )
 
 var BrandRegexps = map[string][]*regexp.Regexp{
