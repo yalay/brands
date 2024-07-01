@@ -1,5 +1,5 @@
 ## Mobile Phone Model to Brand Conversion
-## Supported mobile brand
+### Supported mobile brand
  - Xiaomi
  - vivo
  - Samsung
@@ -11,7 +11,7 @@
  - Apple
  - 360
 
-#### A basic example:
+### A basic example
 ```
 package main
 
@@ -27,5 +27,4 @@ func main() {
 	fmt.Println(mm.Model2Brand("SM-S7110"))   // Samsung
 	fmt.Println(mm.Model2Brand("V1824BA"))    // vivo
 }
-
 ```
