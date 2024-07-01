@@ -14,6 +14,11 @@ func Model2Brand(model string) string {
 	}
 
 	for brand, regs := range BrandRegexps {
+		if strings.Contains(model, strings.ToUpper(brand)) {
+			cache.Store(upperModel, brand)
+			return brand
+		}
+
 		for _, reg := range regs {
 			if reg.MatchString(upperModel) {
 				cache.Store(upperModel, brand)
