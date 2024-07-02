@@ -3,23 +3,24 @@ package mm
 import "regexp"
 
 const (
-	BrandXiaoMi  = "Xiaomi"
-	BrandVivo    = "vivo"
-	BrandSamsung = "Samsung"
-	BrandRealme  = "Realme"
-	BrandOppo    = "oppo"
-	BrandOnePlus = "OnePlus"
-	BrandMeiZu   = "MEIZU"
-	BrandHuaWei  = "HUAWEI"
-	BrandApple   = "Apple"
-	Brand360     = "360"
-	BrandNubia   = "nubia"
-	BrandLenovo  = "Lenovo"
-	BrandZTE     = "ZTE"
-	BrandASUS    = "ASUS"
-	BrandHONOR   = "HONOR"
-	BrandLetv    = "Letv"
-	BrandUnknown = "unknown"
+	BrandXiaoMi   = "Xiaomi"
+	BrandVivo     = "vivo"
+	BrandSamsung  = "Samsung"
+	BrandRealme   = "Realme"
+	BrandOppo     = "oppo"
+	BrandOnePlus  = "OnePlus"
+	BrandMeiZu    = "MEIZU"
+	BrandHuaWei   = "HUAWEI"
+	BrandApple    = "Apple"
+	Brand360      = "360"
+	BrandNubia    = "nubia"
+	BrandLenovo   = "Lenovo"
+	BrandZTE      = "ZTE"
+	BrandASUS     = "ASUS"
+	BrandHONOR    = "HONOR"
+	BrandLetv     = "Letv"
+	BrandMotorola = "Motorola"
+	BrandUnknown  = "unknown"
 )
 
 // The rules are quoted from https://github.com/KHwang9883/MobileModels/blob/master/misc/naming-rules.md
@@ -52,23 +53,26 @@ var (
 	ModelRegexp360 = regexp.MustCompile(`(^|\s|/)(\d{4})([AM])(\d{2})($|\s)`)
 
 	ModelRegexpNubia = regexp.MustCompile(`(^|\s|/)NX(\d{3})[JH]($|\s)`)
+
+	ModelRegexpMotorola = regexp.MustCompile(`(^|\s|/)XT\d{4}-\d{1,2}($|\s)`)
 )
 
 var BrandRegexps = map[string][]*regexp.Regexp{
-	BrandXiaoMi:  {ModelRegexpXiaoMi3, ModelRegexpXiaoMi4, ModelRegexpXiaoMi2, ModelRegexpXiaoMi1, ModelRegexpXiaoMi5},
-	BrandHuaWei:  {ModelRegexpHuaWei1, ModelRegexpHuaWei2},
-	BrandVivo:    {ModelRegexpViVo},
-	BrandOppo:    {ModelRegexpOppo1, ModelRegexpOppo2},
-	BrandApple:   {ModelRegexpApple1, ModelRegexpApple2},
-	BrandRealme:  {ModelRegexpRealme},
-	BrandMeiZu:   {ModelRegexpMeiZu},
-	BrandOnePlus: {ModelRegexpOnePlus},
-	BrandSamsung: {ModelRegexpSamsung},
-	Brand360:     {ModelRegexp360},
-	BrandNubia:   {ModelRegexpNubia},
-	BrandLenovo:  {},
-	BrandZTE:     {},
-	BrandASUS:    {},
-	BrandHONOR:   {},
-	BrandLetv:    {},
+	BrandXiaoMi:   {ModelRegexpXiaoMi3, ModelRegexpXiaoMi4, ModelRegexpXiaoMi2, ModelRegexpXiaoMi1, ModelRegexpXiaoMi5},
+	BrandHuaWei:   {ModelRegexpHuaWei1, ModelRegexpHuaWei2},
+	BrandVivo:     {ModelRegexpViVo},
+	BrandOppo:     {ModelRegexpOppo1, ModelRegexpOppo2},
+	BrandApple:    {ModelRegexpApple1, ModelRegexpApple2},
+	BrandRealme:   {ModelRegexpRealme},
+	BrandMeiZu:    {ModelRegexpMeiZu},
+	BrandOnePlus:  {ModelRegexpOnePlus},
+	BrandSamsung:  {ModelRegexpSamsung},
+	Brand360:      {ModelRegexp360},
+	BrandNubia:    {ModelRegexpNubia},
+	BrandMotorola: {ModelRegexpMotorola},
+	BrandLenovo:   {},
+	BrandZTE:      {},
+	BrandASUS:     {},
+	BrandHONOR:    {},
+	BrandLetv:     {},
 }
