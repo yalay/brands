@@ -72,3 +72,21 @@ func TestHuaWeiModel2Brand(t *testing.T) {
 		}
 	}
 }
+
+func TestSamsungModel2Brand(t *testing.T) {
+	models := []string{
+		"GT-I9000", "SCH-i909", "GT-I9100G",
+		"SCH-I939D", "SCH-I939I", "GT-I9502",
+		"GT-I9507V", "SM-G9006V", "SM-G9810",
+		"SM-S9210", "GT-N7108D", "SM-F9000",
+		"SM-J3119S", "SM-W7023", "SM-T819C",
+		"SM-R9650",
+	}
+
+	for _, model := range models {
+		brand := Model2Brand(model)
+		if brand != BrandSamsung {
+			t.Errorf("%s expect samsung. but got %s", model, brand)
+		}
+	}
+}
