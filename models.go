@@ -1,6 +1,7 @@
 package mm
 
 import (
+	"regexp"
 	"strings"
 	"sync"
 )
@@ -14,7 +15,8 @@ func Model2Brand(model string) string {
 	}
 
 	for brand, regs := range BrandRegexps {
-		if strings.Contains(model, strings.ToUpper(brand)) {
+		upperBrand := strings.ToUpper(brand)
+		if ok, _ := regexp.MatchString(`(^|\s|/)`+upperBrand, model); ok {
 			cache.Store(upperModel, brand)
 			return brand
 		}
