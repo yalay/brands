@@ -31,7 +31,8 @@ var (
 	ModelRegexpXiaoMi4 = regexp.MustCompile(`(^|\s|/)(MI|REDMI|XIAOMI) \w+.*`)
 	ModelRegexpXiaoMi5 = regexp.MustCompile(`(^|\s|/)[A-Z]{3}-(A0|H0)($|\s)`) // 黑鲨
 
-	ModelRegexpViVo = regexp.MustCompile(`(^|\s|/)([VI])(\d{4})[A-Z]+([AT])?($|\s)`)
+	ModelRegexpViVo1 = regexp.MustCompile(`(^|\s|/)([VI])(\d{4})[A-Z]+([AT0])?($|\s)`)
+	ModelRegexpViVo2 = regexp.MustCompile(`(^|\s|/)(PA|IPA)(\d{4})($|\s)`)
 
 	ModelRegexpSamsung = regexp.MustCompile(`(^|\s|/)SM-([SGNFAMECJTXR])(\d{3})([0-9BEFGHUVAPTWNQMC]{1,2})($|\s)`)
 
@@ -39,8 +40,6 @@ var (
 
 	ModelRegexpOppo1 = regexp.MustCompile(`(^|\s|/)P([A-Z]{2})(M|T|1)(\d{2})($|\s)`)
 	ModelRegexpOppo2 = regexp.MustCompile(`(^|\s|/)OPD(\d{4})($|\s)`) // oppo pad
-
-	ModelRegexpOnePlus = regexp.MustCompile(`(^|\s|/)([A-Z]{2})(\d{4})($|\s)`)
 
 	ModelRegexpMeiZu = regexp.MustCompile(`(^|\s|/)([MYUSL])(\d{3})([QMYUCDAH]?)($|\s)`)
 
@@ -60,12 +59,12 @@ var (
 var BrandRegexps = map[string][]*regexp.Regexp{
 	BrandXiaoMi:   {ModelRegexpXiaoMi3, ModelRegexpXiaoMi4, ModelRegexpXiaoMi2, ModelRegexpXiaoMi1, ModelRegexpXiaoMi5},
 	BrandHuaWei:   {ModelRegexpHuaWei1, ModelRegexpHuaWei2},
-	BrandVivo:     {ModelRegexpViVo},
+	BrandVivo:     {ModelRegexpViVo1, ModelRegexpViVo2},
 	BrandOppo:     {ModelRegexpOppo1, ModelRegexpOppo2},
 	BrandApple:    {ModelRegexpApple1, ModelRegexpApple2},
 	BrandRealme:   {ModelRegexpRealme},
 	BrandMeiZu:    {ModelRegexpMeiZu},
-	BrandOnePlus:  {ModelRegexpOnePlus},
+	BrandOnePlus:  {},
 	BrandSamsung:  {ModelRegexpSamsung},
 	Brand360:      {ModelRegexp360},
 	BrandNubia:    {ModelRegexpNubia},
