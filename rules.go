@@ -14,6 +14,11 @@ const (
 	BrandApple   = "Apple"
 	Brand360     = "360"
 	BrandNubia   = "nubia"
+	BrandLenovo  = "Lenovo"
+	BrandZTE     = "ZTE"
+	BrandASUS    = "ASUS"
+	BrandHONOR   = "HONOR"
+	BrandLetv    = "Letv"
 	BrandUnknown = "unknown"
 )
 
@@ -25,7 +30,7 @@ var (
 	ModelRegexpXiaoMi4 = regexp.MustCompile(`(^|\s|/)(MI|REDMI|XIAOMI) \w+.*`)
 	ModelRegexpXiaoMi5 = regexp.MustCompile(`(^|\s|/)[A-Z]{3}-(A0|H0)($|\s)`) // 黑鲨
 
-	ModelRegexpViVo = regexp.MustCompile(`(^|\s|/)([VI])(\d{4})([AT])?($|\s)`)
+	ModelRegexpViVo = regexp.MustCompile(`(^|\s|/)([VI])(\d{4})[A-Z]+([AT])?($|\s)`)
 
 	ModelRegexpSamsung = regexp.MustCompile(`(^|\s|/)SM-([SGNFAMECJTXR])(\d{3})([0-9BEFGHUVAPTWNQMC]{1,2})($|\s)`)
 
@@ -61,4 +66,9 @@ var BrandRegexps = map[string][]*regexp.Regexp{
 	BrandSamsung: {ModelRegexpSamsung},
 	Brand360:     {ModelRegexp360},
 	BrandNubia:   {ModelRegexpNubia},
+	BrandLenovo:  {},
+	BrandZTE:     {},
+	BrandASUS:    {},
+	BrandHONOR:   {},
+	BrandLetv:    {},
 }

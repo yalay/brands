@@ -16,7 +16,7 @@ func Model2Brand(model string) string {
 
 	for brand, regs := range BrandRegexps {
 		upperBrand := strings.ToUpper(brand)
-		if ok, _ := regexp.MatchString(`(^|\s|/)`+upperBrand, model); ok {
+		if ok, _ := regexp.MatchString(`(^|\s|/)`+upperBrand, upperModel); ok {
 			cache.Store(upperModel, brand)
 			return brand
 		}
