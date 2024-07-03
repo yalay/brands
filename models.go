@@ -3,14 +3,15 @@ package mm
 import (
 	"regexp"
 	"strings"
-	"sync"
+
+	"github.com/golang/groupcache/lru"
 )
 
-var cache sync.Map
+var cache = lru.New(10000)
 
 func Model2Brand(model string) string {
 	upperModel := strings.ToUpper(model)
-	if cachedBrand, ok := cache.Load(upperModel); ok {
+	if cachedBrand, ok := cache.Get(upperModel); ok {
 		return cachedBrand.(string)
 	}
 
@@ -18,21 +19,21 @@ func Model2Brand(model string) string {
 	for brand, _ := range BrandRegexps {
 		upperBrand := strings.ToUpper(brand)
 		if ok, _ := regexp.MatchString(`(^|\s|/)`+upperBrand, upperModel); ok {
-			cache.Store(upperModel, brand)
+			cache.Add(upperModel, brand)
 			return brand
 		}
 	}
 
-	// second regular rule matching
+	// second matching with regular rule
 	for brand, regs := range BrandRegexps {
 		for _, reg := range regs {
 			if reg.MatchString(upperModel) {
-				cache.Store(upperModel, brand)
+				cache.Add(upperModel, brand)
 				return brand
 			}
 		}
 	}
 
-	cache.Store(upperModel, BrandUnknown)
+	cache.Add(upperModel, BrandUnknown)
 	return BrandUnknown
 }
