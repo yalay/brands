@@ -4,6 +4,7 @@ import "regexp"
 
 const (
 	BrandXiaoMi   = "Xiaomi"
+	BrandRedMi    = "Redmi"
 	BrandVivo     = "vivo"
 	BrandSamsung  = "Samsung"
 	BrandRealme   = "Realme"
@@ -20,6 +21,7 @@ const (
 	BrandHONOR    = "HONOR"
 	BrandLetv     = "Letv"
 	BrandMotorola = "Motorola"
+	BrandIQOO     = "iQOO"
 	BrandUnknown  = "unknown"
 )
 
@@ -40,7 +42,7 @@ var (
 	ModelRegexpRealme = regexp.MustCompile(`(^|\s|/)(RMX|RMP|RMW)(\d{4})($|\s)`)
 
 	ModelRegexpOppo1 = regexp.MustCompile(`(^|\s|/)P([A-Z]{2})(M|T|1)(\d{2})($|\s)`)
-	ModelRegexpOppo2 = regexp.MustCompile(`(^|\s|/)OPD(\d{4})($|\s)`) // oppo pad
+	ModelRegexpOppo2 = regexp.MustCompile(`(^|\s|/)(OPD|CPH)(\d{4})($|\s)`) // oppo pad
 
 	ModelRegexpMeiZu = regexp.MustCompile(`(^|\s|/)([MYUSL])(\d{3})([QMYUCDAH]?)($|\s)`)
 
@@ -75,4 +77,6 @@ var BrandRegexps = map[string][]*regexp.Regexp{
 	BrandASUS:     {},
 	BrandHONOR:    {},
 	BrandLetv:     {},
+	BrandRedMi:    {},
+	BrandIQOO:     {},
 }
