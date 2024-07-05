@@ -1,4 +1,4 @@
-module github.com/yalay/mm
+module github.com/yalay/brands
 
 go 1.19
 

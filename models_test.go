@@ -1,4 +1,4 @@
-package mm
+package brands
 
 import (
 	"testing"
@@ -62,7 +62,7 @@ func TestHuaWeiModel2Brand(t *testing.T) {
 		"FIG-AL00", "LDN-AL00", "DRA-AL00",
 		"MED-AL00", "GFY-AL00", "MON-W19",
 		"BAH-AL00", "SCM-AL09", "PCE-AL40",
-		"BZK-W00",
+		"BZK-W00", "WDY-AN00",
 	}
 
 	for _, model := range models {
