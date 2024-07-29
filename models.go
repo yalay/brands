@@ -4,10 +4,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/golang/groupcache/lru"
+	lru "github.com/hashicorp/golang-lru"
 )
 
-var cache = lru.New(10000)
+var cache, _ = lru.New(10000)
 var upperBrands = make(map[string]string, len(brandRegexps))
 
 func init() {

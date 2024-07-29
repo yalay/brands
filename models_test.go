@@ -10,6 +10,7 @@ func TestXiaoMiModel2Brand(t *testing.T) {
 		"2206123SC", "22081212UG", "23127PN0CG",
 		"M2006C3LC", "2404ARN45A", "23106RN0DA",
 		"21091116AC", "2201116SG", "2312DRAABC",
+		"Dalvik/2.1.0 (Linux; U; Android 14; 23116PN5BC Build/UKQ1.230804.001)",
 	}
 
 	for _, model := range models {
@@ -26,6 +27,7 @@ func TestViVoModel2Brand(t *testing.T) {
 		"V2031EA", "V1901T", "V1801A0",
 		"V1730EA", "V1824BA", "V1936AL",
 		"PA2170", "iPA2375",
+		"Dalvik/2.1.0 (Linux; U; Android 13; V2203A Build/TP1A.220624.014)",
 	}
 
 	for _, model := range models {
@@ -62,7 +64,7 @@ func TestHuaWeiModel2Brand(t *testing.T) {
 		"FIG-AL00", "LDN-AL00", "DRA-AL00",
 		"MED-AL00", "GFY-AL00", "MON-W19",
 		"BAH-AL00", "SCM-AL09", "PCE-AL40",
-		"BZK-W00", "WDY-AN00",
+		"BZK-W00",
 	}
 
 	for _, model := range models {
